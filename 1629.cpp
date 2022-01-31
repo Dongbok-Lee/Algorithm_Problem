@@ -39,4 +39,4 @@ int main() {
 
 	init();
 	cout << solve(B);
-}//2022-01-31 solved
+}//2022-01-24 solved
