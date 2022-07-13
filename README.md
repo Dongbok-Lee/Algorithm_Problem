@@ -10,5 +10,5 @@
 > <a href="https://www.acmicpc.net/">백준</a>
 
 ## STATUS
-* 주 언어 C++ 이외 C나 Python
+* 주 언어 C++, JAVA
 <img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=ldb0820">
