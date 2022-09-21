@@ -1,4 +1,4 @@
-# [Bronze IV] 전자레인지 - 10162 
+# [Bronze III] 전자레인지 - 10162 
 
 [문제 링크](https://www.acmicpc.net/problem/10162) 
 

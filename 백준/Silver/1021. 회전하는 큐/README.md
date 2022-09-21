@@ -1,4 +1,4 @@
-# [Silver IV] 회전하는 큐 - 1021 
+# [Silver III] 회전하는 큐 - 1021 
 
 [문제 링크](https://www.acmicpc.net/problem/1021) 
 

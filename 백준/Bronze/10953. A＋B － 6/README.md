@@ -1,4 +1,4 @@
-# [Bronze II] A+B - 6 - 10953 
+# [Bronze III] A+B - 6 - 10953 
 
 [문제 링크](https://www.acmicpc.net/problem/10953) 
 

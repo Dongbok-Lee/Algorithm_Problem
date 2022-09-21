@@ -1,4 +1,4 @@
-# [Bronze V] 5의 수난 - 23037 
+# [Bronze II] 5의 수난 - 23037 
 
 [문제 링크](https://www.acmicpc.net/problem/23037) 
 

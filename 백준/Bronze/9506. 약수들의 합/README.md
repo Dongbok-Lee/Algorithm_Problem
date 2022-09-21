@@ -8,7 +8,7 @@
 
 ### 분류
 
-수학(math), 정수론(number_theory), 런타임 전의 전처리(precomputation)
+수학(math), 정수론(number_theory)
 
 ### 문제 설명
 
