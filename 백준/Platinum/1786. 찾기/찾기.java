@@ -1,25 +1,31 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main{
 
-    static Scanner sc = new Scanner(System.in);
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
     static String T, P;
     static int[] pi;
     static ArrayList<Integer> list = new ArrayList<>();
     static int result = 0;
-    public static void main(String[] args) {
-        T = sc.nextLine();
-        P = sc.nextLine();
+    public static void main(String[] args) throws Exception{
+        T = reader.readLine();
+        P = reader.readLine();
 
         pi = new int[P.length()];
 
         getPi();
         getKMP();
 
-        System.out.println(result);
+        writer.write(result + "\n");
         for(int i : list)
-            System.out.print(i + " ");
+            writer.write(i + " ");
+        writer.flush();
+        writer.close();
     }
 
     static void getPi(){
