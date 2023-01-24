@@ -12,6 +12,7 @@ public class Main{
     static int[] pi;
     static ArrayList<Integer> list = new ArrayList<>();
     static int result = 0;
+    static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws Exception{
         T = reader.readLine();
         P = reader.readLine();
@@ -22,8 +23,7 @@ public class Main{
         getKMP();
 
         writer.write(result + "\n");
-        for(int i : list)
-            writer.write(i + " ");
+        writer.write(sb.toString());
         writer.flush();
         writer.close();
     }
@@ -52,8 +52,8 @@ public class Main{
                 j++;
 
             if(j == P.length()){
+                sb.append((i - P.length() + 2) + " ");
                 result++;
-                list.add(i - P.length() + 2);
                 j = pi[j - 1];
             }
         }
