@@ -5,61 +5,62 @@ class Main {
 
     static int N;
     static int M;
-    static ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-    static int[] max;
+    static boolean[] visited;
+    static int[] depthArr;
+    static ArrayList<Integer>[] graph;
+    static int max;
+    static int depth;
     static int result = 0;
+    public static void main(String[] args) throws IOException {
 
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = readInt();
+        M = readInt();
 
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
+        graph = new ArrayList[N + 1];
+        depthArr = new int[N + 1];
 
-        max = new int[N + 1];
-
-        for (int i = 0; i <= N; i++) {
-            graph.add(new ArrayList<>());
+        for (int i = 1; i <= N; i++) {
+            graph[i] = new ArrayList<>();
         }
 
         for (int i =0 ; i < M; i++) {
-            st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
+            int a = readInt();
+            int b = readInt();
 
-            graph.get(b).add(a);
+            graph[b].add(a);
         }
 
         for (int i = 1; i <= N; i++) {
-            Queue<Integer> q = new LinkedList<>();
-            boolean[] visited = new boolean[N + 1];
-            int computer = 0;
-            visited[i] = true;
-            q.offer(i);
-
-
-            while (!q.isEmpty()) {
-                int cur = q.poll();
-
-                for (int num : graph.get(cur)) {
-                    if(!visited[num]) {
-                        visited[num] = true;
-                        q.offer(num);
-                        computer++;
-                    }
-                }
-            }
-
-            max[i] = computer;
-            result = Math.max(result, computer);
+            visited = new boolean[N + 1];
+            depth = 0;
+            dfs(i, 0);
+            depthArr[i] = depth;
+            max = Math.max(max, depth);
         }
 
+        StringBuilder sb = new StringBuilder();
+
         for(int i = 1; i <= N; i++) {
-            if (max[i] == result) {
-                System.out.print(i + " ");
+            if (max == depthArr[i]) {
+                sb.append(i + " ");
+            }
+        }
+        System.out.print(sb);
+    }
+
+    static void dfs(int v, int d) {
+        visited[v] = true;
+        for (int i : graph[v]) {
+            if (!visited[i]) {
+                depth++;
+                dfs(i, d + 1);
             }
         }
     }
 
+    static int readInt() throws IOException {
+        int c, n = System.in.read() & 15;
+        while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+        return n;
+    }
 }
-
