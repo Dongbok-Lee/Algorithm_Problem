@@ -62,13 +62,17 @@ public class Main {
             s.push(new Building(arr[i], i));
         }
 
+        StringBuilder sb = new StringBuilder();
+
         for (int i = 0; i < N; i++) {
             if (buildingNumber[i] == 0) {
-                System.out.println(0);
+                sb.append("0\n");
             } else {
-                System.out.println(buildingNumber[i] + " " + (closeBuilding[i] + 1));
+                sb.append(buildingNumber[i] + " " + (closeBuilding[i] + 1) + "\n");
             }
         }
+
+        System.out.println(sb);
     }
 }
 
